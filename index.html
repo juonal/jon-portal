@@ -5,115 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Technical Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+      font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(14px);
+      background: rgba(30, 41, 59, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: 0 0 20px rgba(30, 64, 175, 0.25);
+    }
+
+    .btn {
+      @apply bg-blue-600 text-white text-center py-2 rounded-lg transition;
+    }
+
+    .btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+    }
+
+    .title-glow {
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+    }
+
+    .neon-border {
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+    }
+
+    #theme-toggle {
+      box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+    }
+
+    /* smooth hover */
+    a { transition: all 0.25s ease-in-out; }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-start p-6">
 
   <!-- 頁首 -->
   <header class="mb-8 text-center">
-    <h1 class="text-3xl font-bold mb-2">Technical Portal</h1>
+    <h1 class="text-4xl font-extrabold mb-4 title-glow tracking-wide">⚙️ Technical Portal</h1>
     <button id="theme-toggle" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
       🌙 切換暗色模式
     </button>
   </header>
 
-  <!-- 技術支援 -->
-  <section class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-lg mb-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4">⚙️ 技術支援相關</h2>
-    <div class="flex flex-col gap-3">
-      <a href="https://adv.lightning.force.com/lightning/page/home" target="_blank" class="btn">Salesforce</a>
+  <!-- 區塊 -->
+  <main class="flex flex-col items-center w-full space-y-8">
 
-      <!-- PLM - 內網限定 -->
-      <div class="relative">
-        <a href="https://acptneplmpd.advantech.com.tw/Agile/" target="_blank" class="btn">PLM</a>
-        <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+    <!-- 技術支援 -->
+    <section class="glass neon-border rounded-2xl p-6 w-full max-w-lg">
+      <h2 class="text-xl font-semibold text-blue-400 mb-4">⚙️ 技術支援相關</h2>
+      <div class="flex flex-col gap-3">
+        <a href="https://adv.lightning.force.com/lightning/page/home" target="_blank" class="btn">Salesforce</a>
+        <div class="relative">
+          <a href="https://acptneplmpd.advantech.com.tw/Agile/" target="_blank" class="btn">PLM</a>
+          <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+        </div>
+        <a href="http://atwnas.advantech.com.tw:8080/cgi-bin/" target="_blank" class="btn">ATW NAS</a>
+        <div class="relative">
+          <a href="https://192.168.10.200/cgi-bin/" target="_blank" class="btn">ATC NAS</a>
+          <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+        </div>
+        <div class="relative">
+          <a href="http://ae-chatbot.advantech.com/chatroom" target="_blank" class="btn">AE Chat</a>
+          <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+        </div>
       </div>
+    </section>
 
-      <a href="http://atwnas.advantech.com.tw:8080/cgi-bin/" target="_blank" class="btn">ATW NAS</a>
-
-      <!-- ATC NAS - 內網限定 -->
-      <div class="relative">
-        <a href="https://192.168.10.200/cgi-bin/" target="_blank" class="btn">ATC NAS</a>
-        <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+    <!-- AI 工具 -->
+    <section class="glass neon-border rounded-2xl p-6 w-full max-w-lg">
+      <h2 class="text-xl font-semibold text-blue-400 mb-4">🤖 AI 工具</h2>
+      <div class="flex flex-col gap-3">
+        <a href="https://chatgpt.com/g/g-67e49c102a4881919c1edb1866671e4e-advantech-product-finder" target="_blank" class="btn">Product Finder</a>
+        <a href="https://chatgpt.com/g/g-68b6684f4ad88191bf751fe0219c2ff5-webaccess-scada-ai-agent" target="_blank" class="btn">WA-SCADA AI Agent</a>
+        <a href="https://chatgpt.com/g/g-68f73e43f9888191a5a7c9dbf54ecf50-windows-event-log-analyzer" target="_blank" class="btn">Windows Event Log Analyzer</a>
+        <a href="https://docs.google.com/document/d/1r2aV-xGS5vZH7U5zVY056xIWN55-5_CAPwRwKXWIOvY/edit?tab=t.0#heading=h.isqqocuxhqt" target="_blank" class="btn">OS Image 下載連結</a>
       </div>
+    </section>
 
-      <!-- AE Chat - 內網限定 -->
-      <div class="relative">
-        <a href="http://ae-chatbot.advantech.com/chatroom" target="_blank" class="btn">AE Chat</a>
-        <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+    <!-- Knowledge Base -->
+    <section class="glass neon-border rounded-2xl p-6 w-full max-w-lg">
+      <h2 class="text-xl font-semibold text-blue-400 mb-4">📘 Knowledge Base</h2>
+      <div class="flex flex-col gap-3">
+        <a href="https://portal-kbinsight-ensaas.genieai.wise-paas.com.cn/kb/library/detail/8DRkxKra0G1?tenantId=VGVuYW50.aBq9ZkuG_V0GEZMW" target="_blank" class="btn">IoT Suite KB</a>
+        <a href="https://advantecho365.sharepoint.com/sites/GlobalAE/" target="_blank" class="btn">AE SharePoint</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- AI 工具 -->
-  <section class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-lg mb-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4">🤖 AI 工具</h2>
-    <div class="flex flex-col gap-3">
-      <a href="https://chatgpt.com/g/g-67e49c102a4881919c1edb1866671e4e-advantech-product-finder" target="_blank" class="btn">Product Finder</a>
-      <a href="https://chatgpt.com/g/g-68b6684f4ad88191bf751fe0219c2ff5-webaccess-scada-ai-agent" target="_blank" class="btn">WA-SCADA AI Agent</a>
-      <a href="https://chatgpt.com/g/g-68f73e43f9888191a5a7c9dbf54ecf50-windows-event-log-analyzer" target="_blank" class="btn">Windows Event Log Analyzer</a>
-      <a href="https://docs.google.com/document/d/1r2aV-xGS5vZH7U5zVY056xIWN55-5_CAPwRwKXWIOvY/edit?tab=t.0#heading=h.isqqocuxhqt" target="_blank" class="btn">OS Image 下載連結</a>
-    </div>
-  </section>
+    <!-- Daily Usage -->
+    <section class="glass neon-border rounded-2xl p-6 w-full max-w-lg">
+      <h2 class="text-xl font-semibold text-blue-400 mb-4">📅 Daily Usage</h2>
+      <div class="flex flex-col gap-3">
+        <a href="https://advantecho365-my.sharepoint.com/:x:/g/personal/iris_lee_advantech_com/EZ8k-t27DK1EprXdfOQt0lcB_syBIs9IYyIiUDg2ezqVGg?rtime=-d7Ct7wD3Ug" target="_blank" class="btn">新竹物流</a>
+        <a href="https://erma.advantech.com.tw/pro?_gl=1*1ln2zox*_gcl_au*OTQxOTUwMjI5LjE3NjEwMDYwNTguODQ2MDQzOTk2LjE3NjE5MTYzMDguMTc2MTkxNjMwOA..*_ga*ZGVsZXRlZA..*_ga_CFPK80LF7Y*czE3NjE5ODA3NDgkbzU1MSRnMCR0MTc2MTk4MDc1MiRqNTYkbDAkaDQxMTUxMDY4Mw.." target="_blank" class="btn">RMA</a>
+        <a href="https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=jwb9Yx9Op02mADn_Ln7-tf6dbWqkGwxAuNjc9g6PiWpUN1BHN1RIOFRaRFRDSkU5VzU2TzJaUFlUQS4u" target="_blank" class="btn">SW Support Ticket</a>
+      </div>
+    </section>
+  </main>
 
-  <!-- Knowledge Base -->
-  <section class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-lg mb-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4">📘 Knowledge Base</h2>
-    <div class="flex flex-col gap-3">
-      <a href="https://portal-kbinsight-ensaas.genieai.wise-paas.com.cn/kb/library/detail/8DRkxKra0G1?tenantId=VGVuYW50.aBq9ZkuG_V0GEZMW" target="_blank" class="btn">IoT Suite KB</a>
-      <a href="https://advantecho365.sharepoint.com/sites/GlobalAE/" target="_blank" class="btn">AE SharePoint</a>
-    </div>
-  </section>
-
-  <!-- Daily Usage -->
-  <section class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-lg mb-6">
-    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4">📅 Daily Usage</h2>
-    <div class="flex flex-col gap-3">
-      <a href="https://advantecho365-my.sharepoint.com/:x:/g/personal/iris_lee_advantech_com/EZ8k-t27DK1EprXdfOQt0lcB_syBIs9IYyIiUDg2ezqVGg?rtime=-d7Ct7wD3Ug" target="_blank" class="btn">新竹物流</a>
-      <a href="https://erma.advantech.com.tw/pro?_gl=1*1ln2zox*_gcl_au*OTQxOTUwMjI5LjE3NjEwMDYwNTguODQ2MDQzOTk2LjE3NjE5MTYzMDguMTc2MTkxNjMwOA..*_ga*ZGVsZXRlZA..*_ga_CFPK80LF7Y*czE3NjE5ODA3NDgkbzU1MSRnMCR0MTc2MTk4MDc1MiRqNTYkbDAkaDQxMTUxMDY4Mw.." target="_blank" class="btn">RMA</a>
-      <a href="https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=jwb9Yx9Op02mADn_Ln7-tf6dbWqkGwxAuNjc9g6PiWpUN1BHN1RIOFRaRFRDSkU5VzU2TzJaUFlUQS4u" target="_blank" class="btn">SW Support Ticket</a>
-    </div>
-  </section>
-
-  <!-- 頁尾 -->
-  <footer class="mt-10 text-sm text-gray-500 dark:text-gray-400">
-    © 2025 Technical Portal
+  <!-- Footer -->
+  <footer class="mt-10 text-sm text-gray-400 text-center">
+    © 2025 Advantech Technical Portal ✦ Designed for internal use
   </footer>
 
-  <!-- 返回頂部按鈕 -->
+  <!-- 返回頂部 -->
   <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
     ⬆️ 返回頂部
   </button>
 
-  <!-- Tailwind 自訂樣式 -->
-  <style>
-    .btn {
-      @apply bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition;
-    }
-  </style>
-
-  <!-- 暗色模式切換 & 返回頂部功能 -->
   <script>
     const toggle = document.getElementById('theme-toggle');
     const backToTop = document.getElementById('back-to-top');
 
-    // 暗色模式切換
     toggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
     });
 
-    // 返回頂部按鈕顯示控制
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.remove('hidden');
-      } else {
-        backToTop.classList.add('hidden');
-      }
+      if (window.scrollY > 300) backToTop.classList.remove('hidden');
+      else backToTop.classList.add('hidden');
     });
 
-    // 點擊返回頂部
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
 </html>
+
