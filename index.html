@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark:bg-gray-900 dark:text-gray-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advantech Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-6">
+
+  <!-- 頁首 -->
+  <header class="mb-8 text-center">
+    <h1 class="text-3xl font-bold mb-2">Advantech Internal Portal</h1>
+    <button id="theme-toggle" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+      🌙 切換暗色模式
+    </button>
+  </header>
+
+  <!-- 技術支援 -->
+  <section class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-lg mb-6">
+    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4">技術支援相關</h2>
+    <div class="flex flex-col gap-3">
+      <a href="https://adv.lightning.force.com/lightning/page/home" target="_blank" class="btn">Salesforce</a>
+
+      <!-- PLM - 內網限定 -->
+      <div class="relative">
+        <a href="https://acptneplmpd.advantech.com.tw/Agile/" target="_blank" class="btn">PLM</a>
+        <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+      </div>
+
+      <a href="http://atwnas.advantech.com.tw:8080/cgi-bin/" target="_blank" class="btn">ATW NAS</a>
+
+      <!-- ATC NAS - 內網限定 -->
+      <div class="relative">
+        <a href="https://192.168.10.200/cgi-bin/" target="_blank" class="btn">ATC NAS</a>
+        <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+      </div>
+
+      <!-- AE Chat - 內網限定 -->
+      <div class="relative">
+        <a href="http://ae-chatbot.advantech.com/chatroom" target="_blank" class="btn">AE Chat</a>
+        <span class="absolute -right-2 -top-2 bg-yellow-500 text-xs text-white px-2 py-0.5 rounded-full">內網限定</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI 工具 -->
+  <section class="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-lg">
+    <h2 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-4">AI 工具</h2>
+    <div class="flex flex-col gap-3">
+      <a href="https://chatgpt.com/g/g-67e49c102a4881919c1edb1866671e4e-advantech-product-finder" target="_blank" class="btn">Product Finder</a>
+      <a href="https://chatgpt.com/g/g-68b6684f4ad88191bf751fe0219c2ff5-webaccess-scada-ai-agent" target="_blank" class="btn">WA-SCADA AI Agent</a>
+      <a href="https://chatgpt.com/g/g-68f73e43f9888191a5a7c9dbf54ecf50-windows-event-log-analyzer" target="_blank" class="btn">Windows Event Log Analyzer</a>
+
+      <!-- OS Image 下載連結 -->
+      <a href="https://docs.google.com/document/d/1r2aV-xGS5vZH7U5zVY056xIWN55-5_CAPwRwKXWIOvY/edit?tab=t.0#heading=h.isqqocuxhqt" target="_blank" class="btn">
+        OS Image 下載連結
+      </a>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="mt-10 text-sm text-gray-500 dark:text-gray-400">
+    © 2025 Advantech Internal Portal
+  </footer>
+
+  <!-- Tailwind 自訂樣式 -->
+  <style>
+    .btn {
+      @apply bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition;
+    }
+  </style>
+
+  <!-- 暗色模式切換腳本 -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
